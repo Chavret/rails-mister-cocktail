@@ -1,0 +1,22 @@
+<!-- <div class="container">
+  <div class="rows">-->
+    <div class="col-xs-12 text-center">
+      <h1>Add dose to <%= @cocktail.name%></h1>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <% if @dose.errors.any? %>
+          <div id="error_explanation text-center">
+            <ul>
+            <% @dose.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :description%>
+        <%= f.input :ingredient, collection: Ingredient.all %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <!--</div>
+</div> -->
+

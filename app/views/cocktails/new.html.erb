@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="rows">
+    <div class="col-xs-12 text-center">
+    <h1>Creation nouveau cocktail</h1>
+      <%= simple_form_for @cocktail do |f| %>
+        <% if @cocktail.errors.any? %>
+          <div id="error_explanation text-center">
+          <ul>
+            <% @cocktail.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+          </div>
+        <% end %>
+        <%= f.input :name %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end%>
+    </div>
+  </div>
+</div>

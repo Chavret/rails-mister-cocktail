@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="rows text-center">
+    <div class="col-xs-12 col-lg 6 ">
+      <h1>Liste des cocktails</h1>
+      <br><br>
+      <% @cocktails.each do |cocktail| %>
+        <%= link_to cocktail_path(cocktail) do %>
+          <h2><%= cocktail.name.capitalize %> </h2>
+        <% end%>
+        <%= link_to "Add a dose",new_cocktail_dose_path(cocktail), class: "btn btn-default" %>
+      <% end %>
+      <br><br>
+      <%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="rows text-center">
+    <div class="col-xs-12">
+      <h1>Recette du cocktail <strong><%= @cocktail.name.capitalize %></strong></h1><br>
+      <br>
+      <br>
+      <ul><% @cocktail.doses.each do |dose| %>
+        <li>Description:<strong> <%= dose.description %></strong></li>
+        <li>Ingredient:<strong> <%= dose.ingredient.name %></strong></li>
+        <br>
+        <br>
+        <li><%= link_to "Remove Dose", dose_path(dose), method: :delete, class: "btn-treehouse", data: {confirm: "Are you sure?"} %>
+        </li>
+        <br><br><br><br>
+      <% end%></ul>
+      <%= link_to "Retour à la liste des cocktails", cocktails_path, class: "btn btn-primary" %>
+      <%= render "doses/new" %>
+      <!-- link_to "add another dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" -->
+    </div>
+  </div>
+</div>
