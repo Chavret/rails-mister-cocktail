@@ -6,3 +6,52 @@ li {
   text-decoration: none;
   list-style-type: none;
 }
+body {
+  background-size: cover;
+  background-color: #ADD8D8;
+}
+.img-small {
+  border-radius: 50px;
+  border-style: solid;
+  border-color: blue;
+  border-width: 2px;
+}
+.nom_cocktail {
+  margin-left: 20px;
+}
+.photo_cocktail {
+  margin-right: 20px;
+}
+.cocktails_index_images {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  padding: 20px 0px;
+  margin: 0px 15px;
+}
+.cocktails_index_images a:link {
+  color: #006699;
+}
+.cocktails_index_images a:visited {
+  color: #006699;
+}
+.cocktails_index_images a:hover {
+  text-decoration: none;
+  text-shadow: 2px 2px #0099CC;
+}
+.bottom_page {
+  margin-bottom: 15px;
+}
+.home_title {
+  color: #006699;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  width: 50vw;
+  height: 100px;
+  background-color: #CCFFFF;
+  border-radius: 30px;
+}

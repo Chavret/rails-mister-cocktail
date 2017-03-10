@@ -1,16 +1,33 @@
 <div class="container">
-  <div class="rows text-center">
-    <div class="col-xs-12 col-lg 6 ">
-      <h1>Liste des cocktails</h1>
+  <div class="rows">
+    <div class="col-xs-12">
+      <h1 class="text-center home_title">Liste des cocktails</h1>
+    </div>
+  </div>
+  <br><br>
+  <% @cocktails.each do |cocktail| %>
+  <div class="rows">
+    <div class="col-xs-12">
+      <div class="cocktails_index_images">
+        <div class="nom_cocktail">
+          <%= link_to cocktail_path(cocktail) do %>
+            <h2><%= cocktail.name.capitalize %>: </h2>
+          <% end%>
+        </div>
+        <div class="photo_cocktail">
+          <% if cocktail.photo? %>
+            <%= cl_image_tag(cocktail.photo.path, { size: '100x100', crop: :thumb, gravity: :face, class: "img-small" }) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br><br>
+  </div>
+  <% end%>
+  <div class="rows">
+    <div class="col-xs-12 text-center">
       <br><br>
-      <% @cocktails.each do |cocktail| %>
-        <%= link_to cocktail_path(cocktail) do %>
-          <h2><%= cocktail.name.capitalize %> </h2>
-        <% end%>
-        <%= link_to "Add a dose",new_cocktail_dose_path(cocktail), class: "btn btn-default" %>
-      <% end %>
-      <br><br>
-      <%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      <%= link_to "Create new cocktail", new_cocktail_path, class: "btn btn-treehouse_sec bottom_page" %>
     </div>
   </div>
 </div>

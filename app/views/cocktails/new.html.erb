@@ -1,7 +1,7 @@
 <div class="container">
   <div class="rows">
     <div class="col-xs-12 text-center">
-    <h1>Creation nouveau cocktail</h1>
+    <h1 class="home_title">Creation nouveau cocktail</h1>
       <%= simple_form_for @cocktail do |f| %>
         <% if @cocktail.errors.any? %>
           <div id="error_explanation text-center">
@@ -13,8 +13,10 @@
           </div>
         <% end %>
         <%= f.input :name %>
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= f.input :photo, as: :attachinary %>
+        <%= f.button :submit, class: "btn btn-treehouse_sec" %>
       <% end%>
+      <%= link_to "Retour à la liste des cocktails", cocktails_path, class: "btn btn-treehouse_sec bottom_page" %>
     </div>
   </div>
 </div>

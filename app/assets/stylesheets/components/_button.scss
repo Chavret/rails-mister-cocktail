@@ -3,10 +3,24 @@
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: bold;
-  background: #6AD58B;
+  background: #00CC99;
   transition: background 0.3s ease;
 }
 .btn-treehouse:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+}
+.btn-treehouse_sec {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #666633;
+  transition: background 0.3s ease;
+}
+.btn-treehouse_sec:hover {
   opacity: 1;
   background: #3ac162;
   text-decoration: none;

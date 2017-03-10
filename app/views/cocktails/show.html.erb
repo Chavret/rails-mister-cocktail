@@ -1,7 +1,10 @@
 <div class="container">
   <div class="rows text-center">
     <div class="col-xs-12">
-      <h1>Recette du cocktail <strong><%= @cocktail.name.capitalize %></strong></h1><br>
+      <h1 class="home_title">Recette du cocktail <strong><%= @cocktail.name.capitalize %></strong></h1><br>
+      <% if @cocktail.photo? %>
+        <%= cl_image_tag(@cocktail.photo.path, { size: '300x300', crop: :thumb, gravity: :face, class: "img-small" }) %>
+      <% end %>
       <br>
       <br>
       <ul><% @cocktail.doses.each do |dose| %>
@@ -9,11 +12,11 @@
         <li>Ingredient:<strong> <%= dose.ingredient.name %></strong></li>
         <br>
         <br>
-        <li><%= link_to "Remove Dose", dose_path(dose), method: :delete, class: "btn-treehouse", data: {confirm: "Are you sure?"} %>
+        <li><%= link_to "Remove Dose", cocktail_dose_path(@cocktail, dose), method: :delete, class: "btn-treehouse", data: {confirm: "Are you sure?"} %>
         </li>
         <br><br><br><br>
       <% end%></ul>
-      <%= link_to "Retour à la liste des cocktails", cocktails_path, class: "btn btn-primary" %>
+      <%= link_to "Retour à la liste des cocktails", cocktails_path, class: "btn btn-treehouse_sec bottom_page" %>
       <%= render "doses/new" %>
       <!-- link_to "add another dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" -->
     </div>

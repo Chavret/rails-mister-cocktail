@@ -1,8 +1,12 @@
 class DosesController < ApplicationController
   before_action :set_dose, only: [:destroy]
 
+  def new
+  end
+
   def destroy
     @dose.destroy
+    @cocktail = params[:cocktail]
     redirect_to cocktails_path
   end
 
